@@ -5,4 +5,4 @@ pages_build_output_dir = "public"
 [[d1_databases]]
 binding = "DB"
 database_name = "safe174th"
-database_id = ""  # Fill after: npx wrangler d1 create safe174th
+database_id = "dd4d7be3-cf84-4999-981e-9553e5d4ae28"
