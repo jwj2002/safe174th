@@ -57,8 +57,8 @@
   var mtVistaWarehouse = L.polygon([
     [45.7445, -122.6255], [45.7445, -122.6170],
     [45.7405, -122.6170], [45.7405, -122.6255]
-  ], { color: '#dc2626', weight: 3, fillColor: '#dc2626', fillOpacity: 0.35 })
-    .bindPopup('<b>Mt. Vista Logistics Center</b><br>583,318 SF warehouse on 33 acres (Panattoni)<br>108 dock doors, 160–240 heavy truck trips/day<br>All traffic routes through NE 50th Ave → NE 179th St');
+  ], { color: '#ffff00', weight: 5, fillColor: '#ffff00', fillOpacity: 0.50 })
+    .bindPopup('<b>Mt. Vista Logistics Center</b><br>583,318 SF warehouse on 33 acres (Panattoni)<br>108 dock doors, 160–240 heavy truck trips/day<br>All traffic routes through NE 50th Ave &rarr; NE 179th St');
 
   var ne50thClosure = L.polyline([
     [45.7510, -122.6270], [45.7420, -122.6270]
