@@ -100,6 +100,55 @@ section + section { border-top: 1px solid var(--slate-200); }
     color: var(--slate-300); font-size: 14px; line-height: 1.7;
 }
 
+/* Hero (home page) */
+.hero-header {
+    padding: 64px 24px 56px;
+}
+
+.hero-inner {
+    max-width: 780px; margin: 0 auto;
+}
+
+.hero-header .hero-location {
+    font-size: 13px; color: var(--slate-400);
+    letter-spacing: 0.5px; margin-bottom: 20px;
+}
+
+.hero-header h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800; letter-spacing: -0.5px;
+    line-height: 1.15; margin: 0 0 36px;
+}
+
+.hero-statement {
+    max-width: 680px; margin: 0 auto;
+}
+
+.hero-problem {
+    font-size: clamp(17px, 2.5vw, 20px);
+    color: var(--slate-200); line-height: 1.7;
+    margin: 0 0 24px;
+}
+
+.hero-stance {
+    font-size: clamp(17px, 2.5vw, 20px);
+    color: #fff; line-height: 1.7;
+    margin: 0;
+}
+
+.hero-stance strong {
+    color: #fff;
+}
+
+.hero-cta {
+    display: flex; gap: 16px; justify-content: center;
+    flex-wrap: wrap; margin-top: 40px;
+}
+
+.hero-header .signature-count {
+    margin-top: 16px;
+}
+
 /* === STATS === */
 .stats-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -389,6 +438,7 @@ section + section { border-top: 1px solid var(--slate-200); }
 /* === RESPONSIVE === */
 @media (max-width: 640px) {
     .site-header { padding: 32px 16px; }
+    .hero-header { padding: 40px 16px 36px; }
     .container { padding: 0 16px; }
     section { padding: 32px 0; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -403,7 +453,7 @@ section + section { border-top: 1px solid var(--slate-200); }
     }
     .nav-toggle { display: block; }
 
-    .cta-row { flex-direction: column; align-items: stretch; }
+    .cta-row, .hero-cta { flex-direction: column; align-items: stretch; }
     .cta-btn { justify-content: center; }
 }
 
