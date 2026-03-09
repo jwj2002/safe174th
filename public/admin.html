@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — safe174th.com</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav class="site-nav"></nav>
+
+<header class="site-header" style="padding: 24px;">
+    <h1>Admin Dashboard</h1>
+</header>
+
+<section>
+    <div class="container" style="max-width: 800px;">
+
+        <!-- Auth -->
+        <div id="auth-section">
+            <div class="form-group">
+                <label for="admin-token">Admin Token</label>
+                <input type="password" id="admin-token" placeholder="Enter admin token">
+            </div>
+            <button onclick="authenticate()" class="cta-btn cta-btn-primary" style="margin-bottom: 24px;">Login</button>
+        </div>
+
+        <div id="admin-content" style="display: none;">
+
+            <!-- Stats -->
+            <div class="stats-grid" style="margin-bottom: 32px;">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-sigs">—</div>
+                    <div class="stat-label">Signatures</div>
+                </div>
+                <div class="stat-card warn">
+                    <div class="stat-value" id="pending-count">—</div>
+                    <div class="stat-label">Pending Feedback</div>
+                </div>
+            </div>
+
+            <!-- Signatures -->
+            <h3 style="margin: 0 0 12px;">Signatures
+                <a href="#" id="export-csv" style="font-size: 13px; font-weight: 500; margin-left: 12px;">Export CSV</a>
+            </h3>
+            <div id="sig-table" style="margin-bottom: 32px; font-size: 14px;"></div>
+
+            <!-- Pending Feedback -->
+            <h3 style="margin: 0 0 12px;">Pending Feedback</h3>
+            <div id="pending-feed"></div>
+
+            <!-- Approved -->
+            <h3 style="margin: 24px 0 12px;">Approved Feedback</h3>
+            <div id="approved-feed"></div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/nav.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

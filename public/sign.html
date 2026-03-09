@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign the Petition — safe174th.com</title>
+    <meta name="description" content="Add your name to support safe road infrastructure on NE 174th Street.">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav class="site-nav"></nav>
+
+<header class="site-header" style="padding: 32px 24px;">
+    <h1>Sign the Petition</h1>
+    <div class="subtitle">Stand with your neighbors for safe infrastructure</div>
+</header>
+
+<section>
+    <div class="container" style="max-width: 640px;">
+        <div class="signature-count" id="sig-count" style="margin-bottom: 24px;"></div>
+
+        <h3 style="font-size: 17px; margin: 0 0 16px; color: var(--slate-900);">What We're Asking</h3>
+
+        <div class="callout-box" style="background: var(--slate-50); border-color: var(--slate-200); border-left-color: var(--red-600);">
+            <p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: var(--red-700); text-transform: uppercase; letter-spacing: 0.5px;">Ask #1 — Certified Traffic Safety Assessment</p>
+            <p style="margin: 0; font-size: 14px; color: var(--slate-700); font-style: italic; line-height: 1.7;">
+                "I am requesting that Clark County commission an independent, certified traffic safety assessment of NE 174th Street and NE 40th Avenue — reviewed and approved by the Clark County Council — that certifies these roads can safely support vehicular traffic, pedestrian walking, and bicycling for 300+ homes as the sole access point to this neighborhood. No additional development should be approved until this assessment is completed, made public, and formally adopted by the Council."
+            </p>
+        </div>
+
+        <div class="callout-box" style="background: var(--slate-50); border-color: var(--slate-200); border-left-color: var(--red-600);">
+            <p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: var(--red-700); text-transform: uppercase; letter-spacing: 0.5px;">Ask #2 — Preserve the Mill Creek Overlay District</p>
+            <p style="margin: 0; font-size: 14px; color: var(--slate-700); font-style: italic; line-height: 1.7;">
+                "I am asking the Council to preserve the Mill Creek Overlay District (CCC 40.250.060) and its current standards, including the 9,000 sq ft minimum lot size and the requirement for additional public road access before new development is approved. This overlay was created in 2009 through two years of community engagement specifically because the area has environmental constraints and only one road in and out."
+            </p>
+        </div>
+
+        <h3 style="font-size: 17px; margin: 28px 0 16px; color: var(--slate-900);">Add Your Signature</h3>
+
+        <form id="sign-form">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="form-group">
+                    <label for="first_name">First Name *</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name *</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="street">Street Address *</label>
+                <input type="text" id="street" name="street" required placeholder="e.g., 3901 NE 174th St">
+                <div class="form-hint">Used to verify you are a community member. Not shared publicly.</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email (optional)</label>
+                <input type="email" id="email" name="email" placeholder="For updates only — never shared">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="agree" required>
+                <label for="agree">I support the two asks above and want Clark County to prioritize safe infrastructure before approving additional development on NE 174th Street.</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="show_public" checked>
+                <label for="show_public">Show my first name and street on the public signer list</label>
+            </div>
+            <button type="submit" class="cta-btn cta-btn-primary" style="width: 100%; justify-content: center; margin-top: 8px;">Sign the Petition</button>
+        </form>
+
+        <div id="sign-result" style="margin-top: 16px;"></div>
+
+        <h3 style="font-size: 17px; margin: 36px 0 16px; color: var(--slate-900);">Who Has Signed</h3>
+        <div id="signer-list" style="font-size: 14px; color: var(--slate-600);"></div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <p style="margin: 0;">safe174th.com — Know Before You Buy</p>
+</footer>
+
+<script src="/js/nav.js"></script>
+<script src="/js/signatures.js"></script>
+</body>
+</html>

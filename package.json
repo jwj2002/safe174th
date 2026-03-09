@@ -1,0 +1,15 @@
+{
+  "name": "safe174th",
+  "version": "1.0.0",
+  "description": "NE 174th Street community advocacy site — Know Before You Buy",
+  "private": true,
+  "scripts": {
+    "dev": "npx wrangler pages dev public --d1 SAFE174TH_DB",
+    "deploy": "npx wrangler pages deploy public",
+    "db:init": "npx wrangler d1 execute safe174th --file=schema.sql",
+    "db:init:local": "npx wrangler d1 execute safe174th --file=schema.sql --local"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NE 174th Street — Know Before You Buy | safe174th.com</title>
+    <meta name="description" content="322 homes approved on a road built for 20. No sidewalks, no shoulders, no secondary access. Get the facts about NE 174th Street development in Clark County, WA.">
+    <meta property="og:title" content="NE 174th Street — Know Before You Buy">
+    <meta property="og:description" content="Clark County approved 322 homes and a 583,000 SF warehouse on roads with no sidewalks, no bike lanes, and no plan. Get the facts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://safe174th.com">
+    <link rel="canonical" href="https://safe174th.com">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<nav class="site-nav"></nav>
+
+<header class="site-header">
+    <h1>NE 174th Street: Know Before You Buy</h1>
+    <div class="subtitle">Clark County Fairgrounds / Salmon Creek Area — Vancouver, WA 98686</div>
+    <div class="updated">Last updated: March 2, 2026</div>
+    <div class="intro">
+        Five development projects totaling 322 homes have been approved on a road originally built for 20.
+        The roads have no sidewalks, no shoulders, no bike lanes, and no secondary emergency access.
+        We are not opposed to growth. We are asking Clark County to do its job: responsible development with safe infrastructure.
+    </div>
+</header>
+
+<!-- Stats Dashboard -->
+<section>
+    <div class="container">
+        <h2 class="section-title">By the Numbers</h2>
+        <p class="section-subtitle">Cumulative impact of all five development projects on NE 174th Street</p>
+        <div class="stats-grid">
+            <div class="stat-card danger">
+                <div class="stat-value">322</div>
+                <div class="stat-label">Total Homes</div>
+            </div>
+            <div class="stat-card danger">
+                <div class="stat-value">~3,065</div>
+                <div class="stat-label">Daily Vehicle Trips</div>
+            </div>
+            <div class="stat-card danger">
+                <div class="stat-value">16&times;</div>
+                <div class="stat-label">Traffic Increase</div>
+            </div>
+            <div class="stat-card warn">
+                <div class="stat-value">&lt;20 ft</div>
+                <div class="stat-label">Current Road Width</div>
+            </div>
+            <div class="stat-card warn">
+                <div class="stat-value">32&ndash;36 ft</div>
+                <div class="stat-label">Required Width</div>
+            </div>
+            <div class="stat-card danger">
+                <div class="stat-value">0</div>
+                <div class="stat-label">Sidewalks / Shoulders / Lights</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-row">
+            <a href="/sign" class="cta-btn cta-btn-primary">Sign the Petition</a>
+            <a href="/community" class="cta-btn cta-btn-secondary">Share Your Story</a>
+        </div>
+        <div class="signature-count" id="sig-count"></div>
+    </div>
+</section>
+
+<!-- Map -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Development Map</h2>
+        <p class="section-subtitle">All five projects feeding NE 174th Street. Toggle layers using the control in the upper right.</p>
+        <div id="map"></div>
+        <div class="map-legend">
+            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(34,139,34,0.35); border-color: #228b22;"></div> Original Neighborhood (built)</div>
+            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(234,179,8,0.35); border-color: #eab308;"></div> M&amp;H / Salmon Creek Reserve (construction)</div>
+            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(234,88,12,0.35); border-color: #ea580c;"></div> Viers Subdivision (approved)</div>
+            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(220,38,38,0.35); border-color: #dc2626;"></div> Mill Creek Estates (pre-app)</div>
+            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(127,29,29,0.35); border-color: #7f1d1d;"></div> 174th St Subdivision (pre-app)</div>
+            <div class="map-legend-item"><span style="display:inline-block;width:16px;height:4px;background:#dc2626;border-radius:2px;"></span> NE 174th Street</div>
+            <div class="map-legend-item"><span style="display:inline-block;width:16px;height:4px;background:#f97316;border-radius:2px;"></span> NE 50th Ave Closure Zone</div>
+            <div class="map-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#7c3aed;border-radius:50%;"></span> Problem Intersections</div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick summary of core issues -->
+<section>
+    <div class="container">
+        <h2 class="section-title">What's the Problem?</h2>
+        <p class="section-subtitle">Six fundamental issues with how development is proceeding</p>
+        <div style="display: grid; gap: 12px;">
+            <div class="argument-card">
+                <h4>1. The road is not safe for current or future traffic</h4>
+                <p>Less than 20 feet wide with no sidewalks, shoulders, bike lanes, or lighting. Should be 32&ndash;36 ft for 322 homes.</p>
+            </div>
+            <div class="argument-card">
+                <h4>2. Only one way in and out for 300+ homes</h4>
+                <p>County code requires secondary emergency access when more than 100 lots use a single access road. Never enforced.</p>
+            </div>
+            <div class="argument-card">
+                <h4>3. Each project evaluated in isolation</h4>
+                <p>Developers avoid cumulative road impacts. Road improvement deferrals granted project by project.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="/facts" style="color: var(--blue-600); font-weight: 600; font-size: 14px;">See all 6 issues, code references, and documentation &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <p style="margin: 0 0 6px; font-size: 15px; font-weight: 700; color: var(--slate-300);">safe174th.com</p>
+    <p style="margin: 0 0 16px;">NE 174th Street — Know Before You Buy</p>
+    <p style="margin: 0 0 16px; max-width: 640px; display: inline-block;">
+        Maintained by residents of the Fairgrounds / Salmon Creek area. Factual, documented, and intended to inform.
+    </p>
+    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--slate-500); font-size: 11px; max-width: 640px; display: inline-block; line-height: 1.8;">
+        <strong>Disclaimer:</strong> This site is maintained by residents. Not affiliated with Clark County or any government agency. All information sourced from public records and news reporting.
+    </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/js/nav.js"></script>
+<script src="/js/map.js"></script>
+<script>
+// Load signature count on home page
+fetch('/api/signatures').then(function(r) { return r.json(); }).then(function(d) {
+    var el = document.getElementById('sig-count');
+    if (el && d.count > 0) el.innerHTML = '<strong>' + d.count + '</strong> neighbors have signed';
+}).catch(function() {});
+</script>
+</body>
+</html>
