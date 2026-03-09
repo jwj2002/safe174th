@@ -7,7 +7,8 @@
     { href: '/timeline', label: 'Timeline' },
     { href: '/facts', label: 'Facts' },
     { href: '/sign', label: 'Sign' },
-    { href: '/take-action', label: 'Take Action' }
+    { href: '/take-action', label: 'Take Action' },
+    { href: '/contacts', label: 'Who to Contact' }
   ];
 
   var nav = document.querySelector('.site-nav');
