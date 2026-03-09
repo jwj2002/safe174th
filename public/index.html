@@ -11,7 +11,6 @@
     <meta property="og:url" content="https://safe174th.com">
     <link rel="canonical" href="https://safe174th.com">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
 
@@ -111,14 +110,14 @@
     <div class="container">
         <h2 class="section-title">Development Map</h2>
         <p class="section-subtitle">All five projects feeding NE 174th Street. Toggle layers using the control in the upper right.</p>
-        <div id="map"></div>
+        <img src="/images/development-map.png" alt="Development map showing all projects on NE 174th Street and Mt. Vista Logistics warehouse on NE 50th Avenue" style="width: 100%; border-radius: 12px; border: 1px solid var(--slate-200);">
         <div class="map-legend">
             <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(34,139,34,0.35); border-color: #228b22;"></div> Original Neighborhood (built)</div>
             <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(234,179,8,0.35); border-color: #eab308;"></div> M&amp;H / Salmon Creek Reserve (construction)</div>
             <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(234,88,12,0.35); border-color: #ea580c;"></div> Viers Subdivision (approved)</div>
             <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(220,38,38,0.35); border-color: #dc2626;"></div> Mill Creek Estates (pre-app)</div>
             <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(127,29,29,0.35); border-color: #7f1d1d;"></div> 174th St Subdivision (pre-app)</div>
-            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(75,85,99,0.35); border-color: #4b5563;"></div> Mt. Vista Logistics (583K SF warehouse)</div>
+            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(220,38,38,0.35); border-color: #dc2626;"></div> Mt. Vista Logistics (583K SF warehouse)</div>
             <div class="map-legend-item"><span style="display:inline-block;width:16px;height:4px;background:#dc2626;border-radius:2px;"></span> NE 174th Street</div>
             <div class="map-legend-item"><span style="display:inline-block;width:16px;height:4px;background:#f97316;border-radius:2px;"></span> NE 50th Ave Closure Zone</div>
             <div class="map-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#7c3aed;border-radius:50%;"></span> Problem Intersections</div>
@@ -162,9 +161,7 @@
     </div>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="/js/nav.js"></script>
-<script src="/js/map.js"></script>
 <script>
 // Load signature count on home page
 fetch('/api/signatures').then(function(r) { return r.json(); }).then(function(d) {
