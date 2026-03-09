@@ -11,6 +11,7 @@
     <meta property="og:url" content="https://safe174th.com">
     <link rel="canonical" href="https://safe174th.com">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
 
@@ -110,7 +111,7 @@
     <div class="container">
         <h2 class="section-title">Development Map</h2>
         <p class="section-subtitle">All five residential projects and the Mt. Vista Logistics warehouse feeding NE 174th Street and NE 50th Avenue</p>
-        <img src="/images/development-map.png" alt="Development map showing all projects on NE 174th Street and Mt. Vista Logistics warehouse on NE 50th Avenue" style="width: 100%; border-radius: 12px; border: 1px solid var(--slate-200);">
+        <div id="map"></div>
         <div class="map-legend">
             <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(34,139,34,0.35); border-color: #228b22;"></div> Original Neighborhood (built)</div>
             <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(234,179,8,0.35); border-color: #eab308;"></div> M&amp;H / Salmon Creek Reserve (construction)</div>
@@ -161,7 +162,9 @@
     </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="/js/nav.js"></script>
+<script src="/js/map.js"></script>
 <script>
 // Load signature count on home page
 fetch('/api/signatures').then(function(r) { return r.json(); }).then(function(d) {
