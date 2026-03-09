@@ -7,7 +7,7 @@
     { href: '/timeline', label: 'Timeline' },
     { href: '/facts', label: 'Facts' },
     { href: '/sign', label: 'Sign' },
-    { href: '/community', label: 'Community' }
+    { href: '/take-action', label: 'Take Action' }
   ];
 
   var nav = document.querySelector('.site-nav');
