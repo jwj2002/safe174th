@@ -3,7 +3,7 @@
   var mapEl = document.getElementById('map');
   if (!mapEl) return;
 
-  var map = L.map('map', { center: [45.7470, -122.6335], zoom: 15 });
+  var map = L.map('map', { center: [45.7490, -122.6310], zoom: 14 });
 
   var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: '&copy; Esri', maxZoom: 20
@@ -54,6 +54,12 @@
   ], { color: '#dc2626', weight: 5, opacity: 0.8 })
     .bindPopup('<b>NE 174th Street</b><br>Width: &lt;20 ft (required: 32–36 ft)<br>~3,065 projected daily trips');
 
+  var mtVistaWarehouse = L.polygon([
+    [45.7445, -122.6255], [45.7445, -122.6170],
+    [45.7405, -122.6170], [45.7405, -122.6255]
+  ], { color: '#dc2626', weight: 3, fillColor: '#dc2626', fillOpacity: 0.35 })
+    .bindPopup('<b>Mt. Vista Logistics Center</b><br>583,318 SF warehouse on 33 acres (Panattoni)<br>108 dock doors, 160–240 heavy truck trips/day<br>All traffic routes through NE 50th Ave → NE 179th St');
+
   var ne50thClosure = L.polyline([
     [45.7510, -122.6270], [45.7420, -122.6270]
   ], { color: '#f97316', weight: 5, opacity: 0.7, dashArray: '10,8' })
@@ -77,6 +83,7 @@
     'Mill Creek Estates (43)': L.layerGroup([millCreekEstates]),
     '174th St Subdivision (103)': L.layerGroup([subdivision174]),
     'NE 174th Street': L.layerGroup([ne174th]),
+    'Mt. Vista Warehouse (583K SF)': L.layerGroup([mtVistaWarehouse]),
     'NE 50th Ave Closure': L.layerGroup([ne50thClosure]),
     'Problem Intersections': L.layerGroup([int1, int2])
   };
