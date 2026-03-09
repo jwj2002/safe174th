@@ -49,9 +49,8 @@
     }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
       .then(function (res) {
         if (res.ok) {
-          result.innerHTML = '<div class="form-success">Thank you for signing! Your support matters.</div>';
+          result.innerHTML = '<div class="form-success"><strong>Check your email!</strong> We sent a confirmation link to verify your signature. Your signature will count once you click the link.</div>';
           form.style.display = 'none';
-          loadSignatures();
         } else {
           result.innerHTML = '<div class="form-error">' + escapeHtml(res.data.error) + '</div>';
           btn.disabled = false;

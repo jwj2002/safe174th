@@ -5,8 +5,10 @@ CREATE TABLE IF NOT EXISTS signatures (
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     street TEXT NOT NULL,
-    email TEXT,
+    email TEXT NOT NULL,
     show_public INTEGER DEFAULT 1,
+    verified INTEGER DEFAULT 0,
+    verify_token TEXT,
     created_at TEXT DEFAULT (datetime('now')),
     ip_hash TEXT
 );
