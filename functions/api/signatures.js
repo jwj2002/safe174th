@@ -7,9 +7,15 @@ export async function onRequestGet(context) {
     'SELECT first_name, street FROM signatures WHERE verified = 1 AND show_public = 1 ORDER BY created_at DESC LIMIT 100'
   ).all();
 
+  // Strip house numbers — only show street name publicly
+  const publicSigners = signers.results.map(s => ({
+    first_name: s.first_name,
+    street: s.street.replace(/^\d+\s*/, ''),
+  }));
+
   return Response.json({
     count: count.count,
-    signers: signers.results,
+    signers: publicSigners,
   });
 }
 
