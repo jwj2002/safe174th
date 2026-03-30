@@ -11,7 +11,6 @@
     <meta property="og:url" content="https://safe174th.com">
     <link rel="canonical" href="https://safe174th.com">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
 
@@ -106,23 +105,75 @@
     </div>
 </section>
 
-<!-- Map -->
+<!-- Development Map -->
 <section>
     <div class="container">
-        <h2 class="section-title">Development Map</h2>
-        <p class="section-subtitle">All five residential projects and the Mt. Vista Logistics warehouse feeding NE 174th Street and NE 50th Avenue</p>
-        <div id="map"></div>
-        <div class="map-legend">
-            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(34,139,34,0.35); border-color: #228b22;"></div> Original Neighborhood (built)</div>
-            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(234,179,8,0.35); border-color: #eab308;"></div> M&amp;H / Salmon Creek Reserve (construction)</div>
-            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(234,88,12,0.35); border-color: #ea580c;"></div> Viers Subdivision (approved)</div>
-            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(220,38,38,0.35); border-color: #dc2626;"></div> Mill Creek Estates (pre-app)</div>
-            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(127,29,29,0.35); border-color: #7f1d1d;"></div> 174th St Subdivision (pre-app)</div>
-            <div class="map-legend-item"><div class="map-legend-swatch" style="background: rgba(220,38,38,0.35); border-color: #dc2626;"></div> Mt. Vista Logistics (583K SF warehouse)</div>
-            <div class="map-legend-item"><span style="display:inline-block;width:16px;height:4px;background:#dc2626;border-radius:2px;"></span> NE 174th Street</div>
-            <div class="map-legend-item"><span style="display:inline-block;width:16px;height:4px;background:#f97316;border-radius:2px;"></span> NE 50th Ave Closure Zone</div>
-            <div class="map-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#7c3aed;border-radius:50%;"></span> Problem Intersections</div>
+        <h2 class="section-title">NE 179th Street Corridor &mdash; Development Map</h2>
+        <p class="section-subtitle">17 active developments and inquiries loading the NE 179th / NE 50th Ave corridor. Seven independent traffic studies project the same result: roads and intersections are failing &mdash; even assuming planned improvements are built.</p>
+        <img src="/images/corridor_2.png" alt="NE 179th Street and NE 50th Avenue Corridors — Active and Potential Development Activities, March 2026. Map by Clark Regional Wastewater District showing 17 numbered development projects." style="width:100%;border-radius:10px;border:1px solid var(--slate-200);">
+        <div style="margin-top:12px;padding:12px 16px;background:#fffbeb;border:1px solid #fbbf24;border-radius:8px;font-size:14px;color:#92400e;">
+            <strong>Not shown on this map:</strong> Salmon Creek Ridge / M+H Subdivision (72 lots, under construction) &mdash; located southwest of project&nbsp;#15, south of NE 174th St near NE 40th Ave.
         </div>
+        <p style="text-align:center;color:#94a3b8;font-size:11px;margin-top:8px;font-style:italic;">Source: Clark Regional Wastewater District, March 2026. Green = active development, blue = development inquiries.</p>
+
+        <!-- Failing intersections & road segments -->
+        <h3 style="margin-top:32px;color:var(--slate-800);font-size:1.25rem;">Where the Roads Are Already Failing</h3>
+        <p style="color:var(--slate-600);font-size:14px;margin-bottom:16px;">Data from seven independent traffic impact studies (2023&ndash;2025). All projections assume planned infrastructure improvements &mdash; interchange reconstruction, roundabouts, road widening &mdash; are completed. They are not. Most are still in design phase (2029&ndash;2031).</p>
+
+        <div style="display:grid;gap:12px;margin-bottom:20px;">
+            <div style="padding:14px 16px;background:#fef2f2;border-left:4px solid #dc2626;border-radius:0 8px 8px 0;">
+                <div style="font-weight:700;color:#991b1b;font-size:15px;margin-bottom:8px;">Already Failing &mdash; LOS F</div>
+                <div style="display:grid;gap:8px;font-size:14px;color:#1e293b;">
+                    <div><strong>NE 179th St / NE Delfel Rd</strong> &mdash; Failing right now (existing 2025 conditions)</div>
+                    <div><strong>NE 179th St / NE 50th Ave</strong> &mdash; LOS F by 2027&ndash;2028, fails without any new project traffic</div>
+                    <div><strong>NE 184th St / NE 29th Ave</strong> &mdash; LOS F by 2029</div>
+                    <div><strong>NE 159th St / NE 72nd Ave</strong> &mdash; LOS F by 2028, westbound approach failing</div>
+                </div>
+            </div>
+
+            <div style="padding:14px 16px;background:#fff7ed;border-left:4px solid #ea580c;border-radius:0 8px 8px 0;">
+                <div style="font-weight:700;color:#c2410c;font-size:15px;margin-bottom:8px;">At the Breaking Point &mdash; LOS E or V/C &gt; 1.0</div>
+                <div style="display:grid;gap:8px;font-size:14px;color:#1e293b;">
+                    <div><strong>I-5 NB Ramps / NE 179th St</strong> &mdash; Over capacity by 2028 (V/C &gt;1.0)</div>
+                    <div><strong>NE 179th St / NE 15th Ave</strong> &mdash; Over capacity by 2028 (V/C &gt;1.0)</div>
+                    <div><strong>NE 50th Ave / NE 159th St</strong> &mdash; LOS E, one more car pushes this to failure</div>
+                    <div><strong>NE 72nd Ave / NE 159th St</strong> &mdash; LOS E, signal warrants already met</div>
+                </div>
+            </div>
+
+            <div style="padding:14px 16px;background:#f8fafc;border-left:4px solid #475569;border-radius:0 8px 8px 0;">
+                <div style="font-weight:700;color:#334155;font-size:15px;margin-bottom:8px;">Road Segments Over Capacity (V/C &gt; 0.90)</div>
+                <div style="display:grid;gap:6px;font-size:14px;color:#1e293b;">
+                    <div><strong>NE 10th Ave: 189th&ndash;179th</strong> &mdash; V/C 1.33 (33% over capacity)</div>
+                    <div><strong>NE 179th St: I-5 to NE 15th Ave</strong> &mdash; V/C 1.17</div>
+                    <div><strong>NE 50th Ave: 179th&ndash;174th</strong> &mdash; V/C 1.13</div>
+                    <div><strong>NE 179th St: Delfel Rd to I-5</strong> &mdash; V/C 1.05</div>
+                    <div><strong>NE 10th Ave: 199th&ndash;194th</strong> &mdash; V/C 1.01</div>
+                    <div><strong>NE 15th Ave: 179th&ndash;174th</strong> &mdash; V/C 0.99</div>
+                    <div><strong>NE Delfel Rd / 10th Ave: 189th&ndash;179th</strong> &mdash; V/C 0.92</div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size:13px;color:#64748b;line-height:1.6;">
+            <strong>Sources:</strong> Three Creeks East TIS (Jun 2025), Four Creeks North TIS (Apr 2025), NE 174th St TIS (Dec 2025), Kozy Manor Estates TIS (Feb 2025), Towhee Creek TIS (Dec 2025), Ridgefield MS TIS (Jun 2024), Mt Vista Logistics TIS (Jan 2023). Analysis compiled by Heidi Owens for the Four Creeks Neighborhood Association, March 2026.
+        </p>
+
+        <!-- Accountability -->
+        <div style="margin-top:24px;padding:20px 24px;background:#1e293b;border-radius:10px;color:#f1f5f9;">
+            <h3 style="color:#fbbf24;font-size:1.15rem;margin-bottom:10px;">Clark County is approving development it knows the infrastructure cannot support.</h3>
+            <p style="font-size:15px;line-height:1.7;color:#e2e8f0;margin-bottom:12px;">Every one of these traffic studies was submitted to Clark County as part of the development approval process. The county has the data. Seven independent consulting firms, hired by seven different applicants, all document the same failures on the same roads and intersections. The county approved the projects anyway.</p>
+            <p style="font-size:15px;line-height:1.7;color:#e2e8f0;margin-bottom:12px;">Road improvement deferrals are granted project by project. Cumulative impacts are never assessed. The result is a corridor where every major intersection is at or past the breaking point &mdash; on paper, before the infrastructure improvements that are still years away from construction.</p>
+            <p style="font-size:15px;line-height:1.7;color:#e2e8f0;">This also raises a question of state oversight. Under Washington&rsquo;s Growth Management Act (RCW 36.70A) and subdivision statute (RCW 58.17.110), counties are required to ensure adequate infrastructure and safe walking conditions before approving development. Where is the accountability when a county approves density that its own traffic studies show the roads cannot handle?</p>
+        </div>
+    </div>
+</section>
+
+<!-- Road photo -->
+<section style="padding:40px 0;">
+    <div class="container" style="text-align:center;">
+        <img src="/images/174th-street-entry.jpg" alt="The entrance to Salmon Creek Reserve subdivision on NE 174th Street — no sidewalks, no street lights, no bike lanes" style="width:100%;max-width:800px;border-radius:10px;border:1px solid var(--slate-200);">
+        <p style="max-width:640px;margin:16px auto 0;font-size:15px;line-height:1.7;color:var(--slate-700);">Salmon Creek Reserve &mdash; 72 new homes, families with children, and this is the road they walk, bike, and drive on every day. No sidewalks, no lights, no shoulders. This is the standard Clark County has set for our community.</p>
     </div>
 </section>
 
@@ -133,16 +184,17 @@
         <p class="section-subtitle">Six fundamental issues with how development is proceeding</p>
         <div style="display: grid; gap: 12px;">
             <div class="argument-card">
-                <h4>1. The road is not safe for current or future traffic</h4>
-                <p>Less than 20 feet wide with no sidewalks, shoulders, bike lanes, or lighting. Should be 32&ndash;36 ft for 322 homes.</p>
+                <h4>1. The roads are not safe for current or future traffic</h4>
+                <p>NE 174th Street is less than 20 feet wide with no sidewalks, shoulders, bike lanes, or lighting &mdash; serving 322 approved homes on a road that should be 32&ndash;36 ft. Seven independent traffic studies across the NE 179th corridor confirm the same pattern: 17+ road segments over capacity, 6 intersections at LOS&nbsp;F, and every study reaches the same conclusion. These failures are projected even after crediting planned infrastructure improvements as&nbsp;complete.</p>
             </div>
             <div class="argument-card">
                 <h4>2. Only one way in and out for 300+ homes</h4>
-                <p>County code requires secondary emergency access when more than 100 lots use a single access road. Never enforced.</p>
+                <p>County code requires secondary emergency access when more than 100 lots use a single access road. NE 174th Street has 302+ approved lots with no secondary access &mdash; and the requirement has never been enforced.</p>
+                <p style="margin-top:8px;">This is the same pattern that killed people in Paradise, California (85 dead), Oakland Hills (25 dead), Gatlinburg, Tennessee (14 dead), and other communities across the country. In every case, neighborhoods were approved for density that exceeded the road&rsquo;s evacuation capacity. When disaster struck, residents died in gridlocked traffic on roads that were never built for that many people. NE 174th Street has the same single-access vulnerability &mdash; with 302+ homes funneling onto a road less than 20 feet wide.</p>
             </div>
             <div class="argument-card">
                 <h4>3. Cumulative impacts never assessed</h4>
-                <p>Each project is evaluated in isolation. Road improvement deferrals are granted project by project.</p>
+                <p>Each development is evaluated in isolation. Cumulative road impacts are never assessed. Road improvement deferrals are granted project by project. The result: 322 homes approved on infrastructure exceeding its original design.</p>
             </div>
         </div>
         <div style="text-align: center; margin-top: 20px;">
@@ -162,9 +214,7 @@
     </div>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="/js/nav.js"></script>
-<script src="/js/map.js"></script>
 <script>
 // Load signature count on home page
 fetch('/api/signatures').then(function(r) { return r.json(); }).then(function(d) {
