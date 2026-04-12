@@ -2,3 +2,7 @@ node_modules/
 .wrangler/
 .dev.vars
 .env
+
+# Personal contact data — never commit to public repo
+drafts/external-contacts.json
+drafts/*-contacts.json
