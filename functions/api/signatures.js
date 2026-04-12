@@ -51,11 +51,12 @@ export async function onRequestPost(context) {
     const ip = context.request.headers.get('cf-connecting-ip') || '';
     const ipHash = await hashIP(ip);
 
-    // Generate verification token
+    // Generate verification token + persistent unsubscribe token
     const token = generateToken();
+    const unsubscribeToken = generateToken();
 
     await context.env.DB.prepare(
-      'INSERT INTO signatures (first_name, last_name, street, email, show_public, ip_hash, verified, verify_token) VALUES (?, ?, ?, ?, ?, ?, 0, ?)'
+      'INSERT INTO signatures (first_name, last_name, street, email, show_public, ip_hash, verified, verify_token, unsubscribe_token) VALUES (?, ?, ?, ?, ?, ?, 0, ?, ?)'
     ).bind(
       first_name.trim(),
       last_name.trim(),
@@ -63,7 +64,8 @@ export async function onRequestPost(context) {
       email.trim().toLowerCase(),
       show_public ? 1 : 0,
       ipHash,
-      token
+      token,
+      unsubscribeToken
     ).run();
 
     // Send verification email

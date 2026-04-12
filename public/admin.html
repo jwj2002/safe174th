@@ -3,8 +3,32 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Admin — safe174th.com</title>
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .bcast-box { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; }
+        .bcast-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 12px; }
+        .bcast-stat { font-size: 13px; color: var(--slate-600); }
+        .bcast-stat strong { color: var(--slate-900); font-size: 15px; }
+        .bcast-form label { display: block; font-size: 13px; font-weight: 600; color: var(--slate-700); margin: 12px 0 4px; }
+        .bcast-form input[type=text], .bcast-form input[type=email], .bcast-form textarea {
+            width: 100%; padding: 10px 12px; border: 1px solid var(--slate-300); border-radius: 6px;
+            font-family: inherit; font-size: 14px; box-sizing: border-box;
+        }
+        .bcast-form textarea { min-height: 220px; font-family: ui-monospace, monospace; font-size: 12px; line-height: 1.5; }
+        .bcast-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+        .bcast-btn { padding: 10px 18px; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
+        .bcast-btn-dry { background: var(--slate-200); color: var(--slate-800); }
+        .bcast-btn-test { background: #dbeafe; color: #1e40af; }
+        .bcast-btn-send { background: var(--red-600); color: #fff; }
+        .bcast-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .bcast-log { margin-top: 12px; padding: 12px 16px; background: #0f172a; color: #e2e8f0; border-radius: 6px; font-family: ui-monospace, monospace; font-size: 12px; line-height: 1.6; max-height: 260px; overflow-y: auto; white-space: pre-wrap; }
+        .bcast-history { font-size: 13px; color: var(--slate-600); margin-top: 12px; }
+        .bcast-history table { width: 100%; border-collapse: collapse; }
+        .bcast-history th, .bcast-history td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--slate-200); }
+        .bcast-history th { font-weight: 600; color: var(--slate-700); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    </style>
 </head>
 <body>
 <nav class="site-nav"></nav>
@@ -39,8 +63,46 @@
                 </div>
             </div>
 
+            <!-- Broadcast Email -->
+            <h3 style="margin: 0 0 12px;">Send Broadcast Email</h3>
+            <div class="bcast-box">
+                <div class="bcast-row">
+                    <div class="bcast-stat"><strong id="bcast-eligible">—</strong> eligible recipients</div>
+                    <div class="bcast-stat"><strong id="bcast-verified">—</strong> verified total</div>
+                    <div class="bcast-stat"><strong id="bcast-unsub">—</strong> unsubscribed</div>
+                    <div class="bcast-stat">Batch limit: <strong id="bcast-batch">45</strong> per request</div>
+                </div>
+
+                <form class="bcast-form" onsubmit="return false;">
+                    <label for="bcast-subject">Subject</label>
+                    <input type="text" id="bcast-subject" placeholder="e.g. Urgent: April 27 Council Vote">
+
+                    <label for="bcast-html">HTML Body</label>
+                    <div style="font-size: 11px; color: var(--slate-500); margin-bottom: 4px;">
+                        Must include <code>{{UNSUBSCRIBE_URL}}</code> somewhere (footer). <code>{{FIRST_NAME}}</code> is optional.
+                    </div>
+                    <textarea id="bcast-html" placeholder="&lt;p&gt;Hi {{FIRST_NAME}},&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;{{UNSUBSCRIBE_URL}}&quot;&gt;Unsubscribe&lt;/a&gt;&lt;/p&gt;"></textarea>
+
+                    <label for="bcast-test-email">Test Email (for Test Send)</label>
+                    <input type="email" id="bcast-test-email" placeholder="your-email@example.com">
+
+                    <div class="bcast-actions">
+                        <button type="button" class="bcast-btn bcast-btn-dry" onclick="broadcastDryRun()">Dry Run (count only)</button>
+                        <button type="button" class="bcast-btn bcast-btn-test" onclick="broadcastTest()">Send Test to 1</button>
+                        <button type="button" class="bcast-btn bcast-btn-send" id="bcast-send-btn" onclick="broadcastSend()">Send to All Recipients</button>
+                    </div>
+                </form>
+
+                <div id="bcast-log" class="bcast-log" style="display: none;"></div>
+
+                <div class="bcast-history">
+                    <h4 style="margin: 20px 0 8px; font-size: 13px; font-weight: 700; color: var(--slate-700); text-transform: uppercase; letter-spacing: 0.5px;">Recent Broadcasts</h4>
+                    <div id="bcast-recent"></div>
+                </div>
+            </div>
+
             <!-- Signatures -->
-            <h3 style="margin: 0 0 12px;">Signatures
+            <h3 style="margin: 32px 0 12px;">Signatures
                 <a href="#" id="export-csv" style="font-size: 13px; font-weight: 500; margin-left: 12px;">Export CSV</a>
             </h3>
             <div id="sig-table" style="margin-bottom: 32px; font-size: 14px;"></div>

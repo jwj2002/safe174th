@@ -9,6 +9,9 @@ CREATE TABLE IF NOT EXISTS signatures (
     show_public INTEGER DEFAULT 1,
     verified INTEGER DEFAULT 0,
     verify_token TEXT,
+    unsubscribed INTEGER DEFAULT 0,
+    unsubscribe_token TEXT,
+    unsubscribed_at TEXT,
     created_at TEXT DEFAULT (datetime('now')),
     ip_hash TEXT
 );
@@ -24,6 +27,19 @@ CREATE TABLE IF NOT EXISTS feedback (
     ip_hash TEXT
 );
 
+CREATE TABLE IF NOT EXISTS broadcasts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    subject TEXT NOT NULL,
+    html TEXT NOT NULL,
+    sent_count INTEGER DEFAULT 0,
+    failed_count INTEGER DEFAULT 0,
+    recipient_count INTEGER DEFAULT 0,
+    sent_at TEXT DEFAULT (datetime('now'))
+);
+
 -- Indexes
 CREATE INDEX IF NOT EXISTS idx_feedback_status ON feedback(status);
 CREATE INDEX IF NOT EXISTS idx_signatures_created ON signatures(created_at);
+CREATE INDEX IF NOT EXISTS idx_signatures_verify_token ON signatures(verify_token);
+CREATE INDEX IF NOT EXISTS idx_signatures_unsubscribe_token ON signatures(unsubscribe_token);
+CREATE INDEX IF NOT EXISTS idx_broadcasts_sent_at ON broadcasts(sent_at);
